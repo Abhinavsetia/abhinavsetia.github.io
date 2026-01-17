@@ -17,6 +17,7 @@
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-primary-light: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
 }
 
 /* Global Styles */
@@ -129,7 +130,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--gradient-primary-light);
     position: relative;
     padding: 8rem 0 4rem;
 }
@@ -384,7 +385,7 @@ body {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--gradient-primary-light);
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;

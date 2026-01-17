@@ -109,8 +109,10 @@ window.addEventListener('scroll', updateActiveNavLink);
 // Typing effect for hero subtitle (optional enhancement)
 const subtitleElement = document.querySelector('.hero-subtitle');
 if (subtitleElement) {
+    // This feature is disabled by default. Uncomment the setTimeout call at the end to enable it.
     const originalText = subtitleElement.textContent;
     const roles = ['Data Science', 'Machine Learning', 'AI Engineering', 'Data Engineering'];
+    const staticSuffix = ' • Machine Learning • AI Engineering';
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -119,10 +121,10 @@ if (subtitleElement) {
         const currentRole = roles[roleIndex];
         
         if (isDeleting) {
-            subtitleElement.textContent = currentRole.substring(0, charIndex - 1) + ' • Machine Learning • AI Engineering';
+            subtitleElement.textContent = currentRole.substring(0, charIndex - 1) + staticSuffix;
             charIndex--;
         } else {
-            subtitleElement.textContent = currentRole.substring(0, charIndex + 1) + ' • Machine Learning • AI Engineering';
+            subtitleElement.textContent = currentRole.substring(0, charIndex + 1) + staticSuffix;
             charIndex++;
         }
         
@@ -171,7 +173,6 @@ window.addEventListener('scroll', () => {
 // Add skill tag click tracking (for future analytics)
 document.querySelectorAll('.skill-tag').forEach(tag => {
     tag.addEventListener('click', () => {
-        console.log('Skill clicked:', tag.textContent);
         // Add analytics tracking here if needed
     });
 });
